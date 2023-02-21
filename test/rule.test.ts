@@ -2,7 +2,7 @@ import 'jest'
 import * as firebase from '@firebase/testing'
 import * as fs from 'fs'
 
-const projectID = 'my-test-project-id'
+const projectID = 'ctec-a97f0'
 describe('test', () => {
   let firestore: firebase.firestore.Firestore
   beforeEach(async () => {
@@ -14,7 +14,7 @@ describe('test', () => {
     describe('try to get user data', () => {
       firestore = firebase
         .initializeTestApp({
-          auth: { uid: 'xxx', email: 'xxx@example.com' },
+          auth: { uid: 'xxx', email: 'collinlindendrak@gmail.com' },
           projectId: projectID
         })
         .firestore()

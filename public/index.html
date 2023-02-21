@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <link rel="shorcut icon" type="image/jpg"
+          href="https://lh3.googleusercontent.com/-QqFZgZm3VWg/AAAAAAAAAAI/AAAAAAAAAAA/QlWGoOXKpaI/s44-p-k-no-ns-nd/photo.jpg">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
+    <title>CTEC Land Acquisition</title>
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/7.13.2/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -14,34 +15,291 @@
     <script defer src="/__/firebase/7.13.2/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+          content="250704395003-bd7nt7jkg0lh9r0rkb2uocrk48lo117t.apps.googleusercontent.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@900&family=Unbounded:wght@900&display=swap');
+    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <style>
+        :root {
+            --ctec-h-font: 'Lexend Zetta', sans-serif;
+            --ctec-h2-font: 'Unbounded', cursive;
+            --ctec-p-font: 'Cairo', sans-serif;;
+            --ctec-blue: rgb(23, 71, 176);
+            --ctec-blue-faded: rgb(84, 135, 253);
+            --ctec-yellow: rgb(251, 164, 26);
+            --ctec-neutral: rgb(59, 59, 59);
+            --ctec-shadow: rgba(4, 23, 66, 0.49);
+            --ctec-background: rgb(255, 255, 255);
+        }
 
+        body {
+            background-color: var(--ctec-background);
+            font-family: var(--ctec-h-font);
+        }
+
+        header {
+            background: linear-gradient(140deg, var(--ctec-blue), var(--ctec-blue-faded));
+            font-family: var(--ctec-h2-font);
+            text-align: center;
+            color: var(--ctec-background);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        footer {
+            background: linear-gradient(140deg, var(--ctec-blue), var(--ctec-blue-faded));
+            font-family: var(--ctec-p-font);
+            text-align: center;
+            color: var(--ctec-background);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 1vmax;
+            padding-top: 2vmax;
+        }
+
+        .ctec-cropped {
+            object-fit: contain;
+            height: 8vmax;
+        }
+
+        h1 {
+            padding: 2vmax;
+            font-family: var(--ctec-h2-font);
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .card {
+            background-color: var(--ctec-background);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            color: linear-gradient(140deg, var(--ctec-blue), var(--ctec-blue-faded));
+            font-family: var(--ctec-p-font);
+            /*text-shadow: 0 1px 4px var(--ctec-shadow);*/
+            padding-bottom: .5vmax;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .card p {
+            width: 20vmax;
+            font-family: var(--ctec-p-font);
+            text-shadow: 0 0px 0px var(--ctec-shadow);
+            font-size: 12px;
+            margin: 0;
+            color: var(--ctec-neutral);
+            padding-bottom: 1vmax;
+        }
+
+        .blue {
+            color: var(--ctec-blue);
+        }
+
+        .yellow {
+            color: var(--ctec-blue);
+        }
+
+        .file {
+            opacity: 0;
+            width: 0.1px;
+            height: 0.1px;
+            position: absolute;
+        }
+
+        .file-input label {
+            font-family: var(--ctec-p-font);
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 50px;
+            border-radius: 25px;
+            background: linear-gradient(140deg, var(--ctec-blue), var(--ctec-blue-faded));
+            box-shadow: 0 4px 7px var(--ctec-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ctec-background);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform .2s ease-out;
+        }
+
+        .file-name {
+            position: absolute;
+            bottom: -35px;
+            left: 10px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        input:hover + label,
+        input:focus + label {
+            transform: scale(1.02);
+        }
+
+        /* Adding an outline to the label on focus */
+        input:focus + label {
+            outline: 1px solid #000;
+            outline: -webkit-focus-ring-color auto 2px;
+        }
+
+        .link {
+            color: var(--ctec-background);
+            font-family: var(--ctec-p-font);
+        }
+    </style>
+</head>
+<header>
+    <img class="ctec-cropped" style="scale: 35%"
+         src="https://images.squarespace-cdn.com/content/v1/5fa86e52be434059a8cead3b/f5538e41-210e-4eb1-a95b-683fc3d34f47/ctec-logo_nav.png?format=1500w">
+    <!--    <h1>AI Driven Land Acquisition</h1>-->
+</header>
+<body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCp1Wkimm_43zW33pncJcmiEwN0gyrpNjE",
+        authDomain: "ctec-a97f0.firebaseapp.com",
+        projectId: "ctec-a97f0",
+        storageBucket: "ctec-a97f0.appspot.com",
+        messagingSenderId: "880695378944",
+        appId: "1:880695378944:web:1e2e4f695e421a7a32c4e5",
+        measurementId: "G-C0JZFG5M2Z"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+<div class="card yellow" style="margin-top: 8vmax">
+    <span class="material-symbols-outlined">account_circle</span>
+    <h2>Step One: Sign In with Google</h2>
+    <p>Once you've uploaded your file, the documents will arrive at your Google Drive in a continuous stream, which will
+        be terminated if this connection is closed.</p>
+    <div class="g-signin2" id="google" data-onsuccess="onSignIn"></div>
+    <!-- Add a button with an ID -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // Initialize the Google Sign-In API with your client ID
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: '250704395003-bd7nt7jkg0lh9r0rkb2uocrk48lo117t'
+            });
+        });
+
+        // Add a click event listener to the button
+        document.getElementById('google-signin-btn').addEventListener('click', function () {
+            // Call the Google Sign-In API's signIn() method to initiate the sign-in process
+            gapi.auth2.getAuthInstance().signIn();
+        });
+
+        // Handle the sign-in response
+        function onSignIn(googleUser) {
+            // The user has signed in, do something with the user's information
+            let profile = googleUser.getBasicProfile();
+            console.log('User signed in: ' + profile.getName());
+        }
+
+        // Load the Google Docs API and authenticate the user
+        gapi.client.load('docs', 'v1', function () {
+            gapi.auth.authorize({
+                client_id: 'YOUR_CLIENT_ID',
+                scope: 'https://www.googleapis.com/auth/documents',
+                immediate: true
+            }, handleAuthResult);
+        });
+
+        function handleAuthResult(authResult) {
+            if (authResult && !authResult.error) {
+                // Create a new document
+                gapi.client.docs.documents.create().execute(function (response) {
+                    var documentId = response.documentId;
+
+                    // Add text to the document
+                    var requests = [
+                        {
+                            insertText: {
+                                text: 'Hello, world!',
+                                endOfSegmentLocation: {}
+                            }
+                        }
+                    ];
+                    gapi.client.docs.documents.batchUpdate({
+                        documentId: documentId,
+                        requests: requests
+                    }).execute(function (response) {
+                        console.log('Text added to document.');
+                    });
+                });
+            } else {
+                console.log('Authentication failed.');
+            }
+        }
+    </script>
+</div>
+<div class="card blue">
+    <span class="material-symbols-outlined">cloud_circle</span>
+    <h2>Step Two: Upload A CSV File</h2>
+    <p>Use the file that you've downloaded from
+        <a style="color: var(--ctec-blue)" href="https://andersonoptimization.com/">Anderson Optimization</a>.</p>
+    <div class="file-input">
+        <script>
+            const file = document.querySelector('#file');
+            file.addEventListener('change', (e) => {
+                // Get the selected file
+                const [file] = e.target.files;
+                // Get the file name and size
+                const {name: fileName, size} = file;
+                const fileSize = (size / 1000).toFixed(2);
+                // Set the text content
+                const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+                document.querySelector('.file-name').textContent = fileNameAndSize;
+            });
+        </script>
+        <input type="file" id="file" class="file" accept=".csv">
+        <label for="file">
+            <span class="material-symbols-outlined">upload_file</span>
+        </label>
+        <p class="file-name"></p>
+    </div>
+</div>
+<script>
+    import firebase from "firebase";
+
+    document.addEventListener('DOMContentLoaded', function () {
+
         // // The Firebase SDK is initialized and available here!
         //
         // firebase.auth().onAuthStateChanged(user => { });
@@ -49,17 +307,24 @@
         // firebase.messaging().requestPermission().then(() => { });
         // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
         //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
         try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+            let app = firebase.app();
+            let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+            document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
         } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+            console.error(e);
+            document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
         }
-      });
-    </script>
-  </body>
+    });
+</script>
+</body>
+<footer>
+    <!--    <p style="font-family: var(&#45;&#45;ctec-p-font)">Connect With Me:</p>-->
+    <a class="link" href="https://github.com/cldrake01"><span class="material-symbols-outlined">code</span></a>
+    <a class="link" href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/"><span
+            class="material-symbols-outlined">portrait_lighting</span></a>
+    <a class="link" href="mailto:collinlindendrake@gmail.com"><span
+            class="material-symbols-outlined">mail</span></a>
+</footer>
 </html>
